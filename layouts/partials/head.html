@@ -98,17 +98,6 @@
 
 {{ $fontawesomeJS := resources.Get "js/fontawesome.js" | resources.ExecuteAsTemplate "js/fontawesome.js" . | js.Build (dict "minify" true) | minify | fingerprint "sha384" }}
 <script defer type="text/javascript" src="{{ $fontawesomeJS.Permalink }}"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1VGR8P4Q2K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1VGR8P4Q2K');
-</script>
-
-
 {{- $enableMath := false }}
 {{- if .Site.Params.math.handler }}
   {{- $bundles := partial "utils/get-bundles" . }}
