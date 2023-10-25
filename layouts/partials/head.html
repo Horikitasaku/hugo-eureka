@@ -1,7 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow">
-<meta name="description" content="Horikita Saku ほりきたさく 堀北朔 Blog">
 {{ define "partials/get-title" }}
 {{ $separator := .Site.Params.titleSeparator | default "|" }}
 {{ $primarySep := $separator }}
@@ -52,6 +51,15 @@
 {{ return $title }}
 {{ end }}
 <title>{{ partial "get-title" . }}</title>
+{{ define "custom_description" }}
+  {{ with .Params.description }}
+    {{ . }}
+  {{ else }}
+    {{ .Content | safeHTML | truncate 200 }}
+  {{ end }}
+{{ end }}
+
+<meta name="description" content="{{ partial 'custom_description' . }}">
 
 <meta name="generator" content="Hugo Eureka {{ .Site.Data.eureka.version }}" />
 
