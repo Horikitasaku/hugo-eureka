@@ -1,6 +1,4 @@
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="index, follow">
 {{ define "partials/get-title" }}
 {{ $separator := .Site.Params.titleSeparator | default "|" }}
 {{ $primarySep := $separator }}
@@ -51,7 +49,9 @@
 {{ return $title }}
 {{ end }}
 <title>{{ partial "get-title" . }}</title>
-
+<meta name="description" content="Horikita Saku's Blog. Also ほりきたさく, 堀北朔.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
 <meta name="generator" content="Hugo Eureka {{ .Site.Data.eureka.version }}" />
 
 {{- $eurekaCSS := resources.Get "css/eureka.css" | postCSS (dict "config" "./assets/css/postcss.config.js" "inlineImports" true) | resources.ExecuteAsTemplate "css/eureka.css" . | minify | fingerprint "sha384" }}
