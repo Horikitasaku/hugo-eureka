@@ -51,15 +51,6 @@
 {{ return $title }}
 {{ end }}
 <title>{{ partial "get-title" . }}</title>
-{{ define "custom_description" }}
-  {{ with .Params.description }}
-    {{ . }}
-  {{ else }}
-    {{ .Content | safeHTML | truncate 200 }}
-  {{ end }}
-{{ end }}
-
-<meta name="description" content="{{ partial "custom_description" . }}">
 
 <meta name="generator" content="Hugo Eureka {{ .Site.Data.eureka.version }}" />
 
