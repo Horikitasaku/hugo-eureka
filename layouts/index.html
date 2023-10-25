@@ -1,6 +1,7 @@
 {{- define "main" }}
   {{ $homepage := .Site.GetPage "homepage" }}
   {{ $widgets := $homepage.Resources }}
+  <meta name="robots" content="index, follow">
   {{ range $widgets }}
     {{ if .Params.widget.handler }}
       {{ partial "widgets/load" . }}
