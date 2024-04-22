@@ -6,7 +6,7 @@
       <!-- <h3 class="">{{ .title }}</h3> -->
       <h3 class="">
         {{ if .titleUrl }}
-          <a href="{{ .titleUrl }}" class="no-underline">
+          <a href="{{ .titleUrl }}" class="">
             {{ .title | markdownify }}
           </a>
         {{ else }}
