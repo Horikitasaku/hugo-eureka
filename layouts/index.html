@@ -2,6 +2,12 @@
   {{ $homepage := .Site.GetPage "homepage" }}
   {{ $widgets := $homepage.Resources }}
   <meta name="robots" content="index, follow">
+  <div class="floating-nav">
+    <ul>
+      <li><a href="#experience-section">Experience</a></li>
+      <li><a href="#pages-section">Pages</a></li>
+    </ul>
+  </div>
   {{ range $widgets }}
     {{ if .Params.widget.handler }}
       {{ partial "widgets/load" . }}
