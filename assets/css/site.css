@@ -83,3 +83,13 @@
   color: #333; /* Adjust color as necessary */
   text-decoration: none;
 }
+
+#experience-section, #pages-section {
+  padding-top: 100px;
+  margin-top: -100px;
+}
+
+#pages-section {
+  padding-top: 100px;
+  margin-top: -100px;
+}
