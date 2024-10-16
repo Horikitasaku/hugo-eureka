@@ -55,3 +55,31 @@
   border-top-color: var(--color-eureka);
   border-bottom-color: transparent;
 }
+
+/* Floating Navigation Menu Styles */
+.floating-nav {
+  position: fixed;
+  top: 50%; /* Adjust as necessary */
+  right: 0;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.floating-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.floating-nav li + li {
+  margin-top: 10px;
+}
+
+.floating-nav a {
+  display: block;
+  padding: 5px 10px;
+  color: #333; /* Adjust color as necessary */
+  text-decoration: none;
+}
