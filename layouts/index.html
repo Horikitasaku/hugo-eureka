@@ -2,10 +2,6 @@
   {{ $homepage := .Site.GetPage "homepage" }}
   {{ $widgets := $homepage.Resources }}
   <meta name="robots" content="index, follow">
-  <ul class="menu-hover-fill flex flex-col items-start leading-none text-2xl uppercase space-y-4">
-    <li><a href="#experience-section" data-text="Experience">Experience</a></li>
-    <li><a href="#pages-section" data-text="Pages">Pages</a></li>
-  </ul>
   {{ range $widgets }}
     {{ if .Params.widget.handler }}
       {{ partial "widgets/load" . }}
