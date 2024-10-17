@@ -8,14 +8,18 @@
   --color-secondary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "light" "secondaryText")) }};
   --color-tertiary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "light" "tertiaryText")) }};
   --fonts-eureka: {{ $fonts := partial "utils/get-style-fonts" (dict "context" . "param" "name") }}{{ range $index, $value := $fonts }}{{ if gt $index 0 }},{{ end }}{{ $value }}{{ else }}""{{ end }};
-  --grey-color: #7f8c8d;
-  --primary-color: #3498db;
-  --info-color: #1abc9c;
-  --success-color: #2ecc71;
-  --warning-color: #f1c40f;
-  --danger-color: #e74c3c;
-  --menu-link-active-colors: var(--primary-color), var(--info-color),
-  var(--success-color), var(--warning-color), var(--danger-color);
+  --grey-color: {{ partial "utils/get-style-color" (dict "context" . "color" "grey") }};
+  --primary-color: {{ partial "utils/get-style-color" (dict "context" . "color" "primary") }};
+  --info-color: {{ partial "utils/get-style-color" (dict "context" . "color" "info") }};
+  --success-color: {{ partial "utils/get-style-color" (dict "context" . "color" "success") }};
+  --warning-color: {{ partial "utils/get-style-color" (dict "context" . "color" "warning") }};
+  --danger-color: {{ partial "utils/get-style-color" (dict "context" . "color" "danger") }};
+  --menu-link-active-colors: 
+    {{ partial "utils/get-style-color" (dict "context" . "color" "primary") }},
+    {{ partial "utils/get-style-color" (dict "context" . "color" "info") }},
+    {{ partial "utils/get-style-color" (dict "context" . "color" "success") }},
+    {{ partial "utils/get-style-color" (dict "context" . "color" "warning") }},
+    {{ partial "utils/get-style-color" (dict "context" . "color" "danger") }};
 
 }
 
@@ -27,15 +31,18 @@
   --color-primary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "primaryText")) }};
   --color-secondary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "secondaryText")) }};
   --color-tertiary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "tertiaryText")) }};
-  --grey-color: #7f8c8d;
-  --primary-color: #3498db;
-  --info-color: #1abc9c;
-  --success-color: #2ecc71;
-  --warning-color: #f1c40f;
-  --danger-color: #e74c3c;
-  --menu-link-active-colors: var(--primary-color), var(--info-color),
-  var(--success-color), var(--warning-color), var(--danger-color);
-
+  --grey-color: {{ partial "utils/get-style-color" (dict "context" . "color" "grey") }};
+  --primary-color: {{ partial "utils/get-style-color" (dict "context" . "color" "primary") }};
+  --info-color: {{ partial "utils/get-style-color" (dict "context" . "color" "info") }};
+  --success-color: {{ partial "utils/get-style-color" (dict "context" . "color" "success") }};
+  --warning-color: {{ partial "utils/get-style-color" (dict "context" . "color" "warning") }};
+  --danger-color: {{ partial "utils/get-style-color" (dict "context" . "color" "danger") }};
+  --menu-link-active-colors: 
+    {{ partial "utils/get-style-color" (dict "context" . "color" "primary") }},
+    {{ partial "utils/get-style-color" (dict "context" . "color" "info") }},
+    {{ partial "utils/get-style-color" (dict "context" . "color" "success") }},
+    {{ partial "utils/get-style-color" (dict "context" . "color" "warning") }},
+    {{ partial "utils/get-style-color" (dict "context" . "color" "danger") }};
 }
 
 h1,
