@@ -120,7 +120,7 @@
   }
 }
 
-#slidebar {
+.slidebar {
   position: fixed;
   right: 0;
   top: 50%;
@@ -129,7 +129,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-#slidebar-toggle {
+.slidebar-toggle {
   position: absolute;
   left: 0;
   top: 50%;
@@ -153,8 +153,8 @@
 }
 
 
-#experience-section,
-#pages-section {
+.experience-section,
+.pages-section {
   padding-top: 100px;
   margin-top: -100px;
 }
