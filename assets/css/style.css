@@ -80,9 +80,6 @@ a {
   text-decoration: none;
 }
 
-$menu-link-active-colors: var(--primary-color), var(--info-color),
-  var(--success-color), var(--warning-color), var(--danger-color);
-
 .menu-hover-fill {
   li {
     position: relative;
