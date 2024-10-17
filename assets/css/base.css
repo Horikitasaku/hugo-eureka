@@ -14,6 +14,9 @@
   --success-color: #2ecc71;
   --warning-color: #f1c40f;
   --danger-color: #e74c3c;
+  --menu-link-active-colors: var(--primary-color), var(--info-color),
+  var(--success-color), var(--warning-color), var(--danger-color);
+
 }
 
 .dark {
@@ -30,6 +33,9 @@
   --success-color: #2ecc71;
   --warning-color: #f1c40f;
   --danger-color: #e74c3c;
+  --menu-link-active-colors: var(--primary-color), var(--info-color),
+  var(--success-color), var(--warning-color), var(--danger-color);
+
 }
 
 h1,
