@@ -142,6 +142,39 @@ $menu-link-active-colors: var(--primary-color), var(--info-color),
   }
 }
 
+#slidebar {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  transition: transform 0.3s ease-in-out;
+}
+
+#slidebar-toggle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  background-color: var(--secondary-bg);
+  padding: 0.5rem;
+  border-radius: 0 0.375rem 0.375rem 0;
+  transition: background-color 0.3s ease;
+}
+
+#slidebar-toggle:hover {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary-bg {
+  background-color: #f8f9fa; 
+}
+
+.menu-hover-fill a:hover {
+  color: var(--primary-color); 
+}
+
+
 #experience-section,
 #pages-section {
   padding-top: 100px;
