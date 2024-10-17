@@ -7,7 +7,13 @@
   --color-primary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "light" "primaryText")) }};
   --color-secondary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "light" "secondaryText")) }};
   --color-tertiary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "light" "tertiaryText")) }};
-  --fonts-eureka: {{ $fonts := partial "utils/get-style-fonts" (dict "context" . "param" "name") }}{{ range $index, $value := $fonts }}{{ if gt $index 0 }},{{ end }}{{ $value }}{{ else }}""{{ end }}
+  --fonts-eureka: {{ $fonts := partial "utils/get-style-fonts" (dict "context" . "param" "name") }}{{ range $index, $value := $fonts }}{{ if gt $index 0 }},{{ end }}{{ $value }}{{ else }}""{{ end }};
+  --grey-color: #7f8c8d;
+  --primary-color: #3498db;
+  --info-color: #1abc9c;
+  --success-color: #2ecc71;
+  --warning-color: #f1c40f;
+  --danger-color: #e74c3c;
 }
 
 .dark {
