@@ -56,27 +56,31 @@
   border-bottom-color: transparent;
 }
 
-/* Floating Container Styles */
-.floating-menu {
-  position: fixed;
-  top: 50%; /* Center vertically */
-  right: 20px; /* Position close to the right edge */
-  transform: translateY(-50%); /* Adjust for perfect centering */
-  background: rgba(0, 0, 0, 0.85); /* Slightly transparent background */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for a floating effect */
-  z-index: 1000; /* Ensure it's on top */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: black;
 }
 
-/* Ensure ul inherits the floating styles */
-.floating-menu ul {
+:root {
+  --grey-color: #7f8c8d;
+}
+
+ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
 
-/* Existing .menu-hover-fill styles */
+a {
+  text-decoration: none;
+}
+
+$menu-link-active-colors: var(--primary-color), var(--info-color),
+  var(--success-color), var(--warning-color), var(--danger-color);
+
 .menu-hover-fill {
   li {
     position: relative;
@@ -127,6 +131,7 @@
     }
   }
 }
+
 
 #experience-section, #pages-section {
   padding-top: 100px;
