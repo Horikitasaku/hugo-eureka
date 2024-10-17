@@ -48,6 +48,13 @@ module.exports = {
         "primary-text": "var(--color-primary-text)",
         "secondary-text": "var(--color-secondary-text)",
         "tertiary-text": "var(--color-tertiary-text)",
+        grey: "var(--grey-color)",
+        primary: "var(--primary-color)",
+        info: "var(--info-color)",
+        success: "var(--success-color)",
+        warning: "var(--warning-color)",
+        danger: "var(--danger-color)",
+        "menu-link-active-colors": "var(--menu-link-active-colors)", // Add this line
       },
       typography: ({ theme }) => ({
         DEFAULT: {
