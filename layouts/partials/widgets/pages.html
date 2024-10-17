@@ -1,3 +1,4 @@
+<div id="pages-section">
 {{ if not .Params.widget.sidebar.position }}
   <h2 class=" font-bold text-3xl my-4">{{ .Params.Title }}</h2>
 {{ end }}
@@ -50,16 +51,4 @@
   <a href="{{ $section.Permalink }}" class="font-semibold">{{ i18n "readMore" }}</a>
   <i class='fas {{ cond (eq .Site.Language.LanguageDirection "rtl") "fa-caret-left" "fa-caret-right" }} ms-1'></i>
 {{ end }}
-
-<div id="pages-section">
-  {{ if not .Params.widget.sidebar.position }}
-    <h2 class="font-bold text-3xl my-4">{{ .Params.Title }}</h2>
-  {{ end }}
-  {{ if eq .Params.style "plain" }}
-    {{ partial "widgets/pages-plain" . }}
-  {{ else if eq .Params.style "masonry" }}
-    {{ partial "widgets/pages-masonry" . }}
-  {{ else }}
-    {{ partial "widgets/pages-card" . }}
-  {{ end }}
 </div>
