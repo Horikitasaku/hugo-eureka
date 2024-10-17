@@ -3,15 +3,6 @@
     border-radius: 5px;
 }
 
-:root {
-    --grey-color: #7f8c8d;
-    --primary-color: #3498db;
-    --info-color: #1abc9c;
-    --success-color: #2ecc71;
-    --warning-color: #f1c40f;
-  --danger-color: #e74c3c;
-}
-
 .sticky-toc {
   position: sticky;
   top: 8rem; /* top-32 */
