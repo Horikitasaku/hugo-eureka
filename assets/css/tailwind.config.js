@@ -54,7 +54,7 @@ module.exports = {
         success: "var(--success-color)",
         warning: "var(--warning-color)",
         danger: "var(--danger-color)",
-        "menu-link-active-colors": "var(--menu-link-active-colors)", // Add this line
+        "menu-link-active-colors": "var(--menu-link-active-colors)",
       },
       typography: ({ theme }) => ({
         DEFAULT: {
