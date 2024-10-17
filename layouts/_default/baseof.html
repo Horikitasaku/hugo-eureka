@@ -6,7 +6,6 @@
 >
   {{- partial "head" . }}
 
-
   <body class="flex min-h-screen flex-col">
     <header
       class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
@@ -15,6 +14,10 @@
         {{- partial "header" . -}}
       </div>
     </header>
+
+    <!-- Slidebar -->
+    {{- partial "slidebar" . -}}
+
     <main class="grow pt-16">
       {{- if or .IsHome (and (eq .Type "authors") (eq .Kind "term")) }}
         {{- block "main" . }}{{- end }}
@@ -26,6 +29,7 @@
         </div>
       {{ end }}
     </main>
+
     <footer class="pl-scrollbar">
       <div class="mx-auto w-full max-w-screen-xl">
         {{- partial "footer" . -}}
