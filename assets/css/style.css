@@ -2,3 +2,10 @@
     border: 2px solid #15151587;
     border-radius: 5px;
 }
+
+#experience-section,
+#pages-section,
+#about-me-section {
+  padding-top: 100px;
+  margin-top: -100px;
+}
