@@ -35,10 +35,19 @@ a {
   text-decoration: none;
 }
 
+#menu-hover-fill {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; 
+  align-items: flex-start;
+  line-height: 1.5;
+}
+
 #menu-hover-fill li {
   position: relative;
   list-style-type: none;
-
+  
   &::before {
     position: absolute;
     content: "";
@@ -77,8 +86,6 @@ a {
     }
   }
 }
-
-
 
 
 #slidebar {
