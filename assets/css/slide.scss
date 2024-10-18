@@ -55,6 +55,7 @@ a {
       position: relative;
       background: linear-gradient(var(--color-eureka) 0 100%) left / 0 no-repeat;
       color: transparent;
+      background-color: var(--color-secondary-text);
       background-clip: text;
       -webkit-background-clip: text;
       transition: background-size 0.45s 0.04s;
@@ -71,7 +72,6 @@ a {
     }
 
     &:hover {
-      color: var(--color-eureka);
       &::before {
         left: calc(100% + 1rem);
       }
