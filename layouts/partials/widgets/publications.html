@@ -1,0 +1,34 @@
+<div class="publications-section" id="publications-section">
+    {{ if not .Params.widget.sidebar.position }}
+      <h2 class="font-bold text-3xl my-4">{{ .Params.Title }}</h2>
+    {{ end }}
+    
+    {{ $publications := partial "widgets/publications-get" . }}
+    
+    {{ if eq .Params.style "plain" }}
+      {{ partial "components/summary-list-plain" $publications }}
+    {{ else }}
+      {{ partial "components/summary-list-card" $publications }}
+    {{ end }}
+    
+    <div class="pt-2 hover:text-eureka">
+      {{ partial "widgets/publications-readmore" . }}
+    </div>
+  </div>
+  
+  {{ define "partials/widgets/publications-get" }}
+    {{- $section := .Site.GetPage .Params.section }}
+    {{ $publications := $section.Pages }}
+    {{ $count := .Params.count | default 5 }}
+    {{ with $count }}
+      {{ $publications = first $count $publications }}
+    {{ end }}
+    {{ return $publications }}
+  {{ end }}
+  
+  {{ define "partials/widgets/publications-readmore" }}
+    {{- $section := .Site.GetPage .Params.section }}
+    <a href="{{ $section.Permalink }}" class="font-semibold">{{ i18n "readMore" }}</a>
+    <i class='fas {{ cond (eq .Site.Language.LanguageDirection "rtl") "fa-caret-left" "fa-caret-right" }} ms-1'></i>
+  {{ end }}
+  
