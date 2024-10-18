@@ -47,13 +47,13 @@ a {
       left: -1rem;
       width: 0.25rem;
       height: 100%;
-      background: #38b2ac;
+      background: var(--color-secondary-text);
       transition: 0.6s;
     }
 
     a {
       position: relative;
-      background: linear-gradient(#38b2ac 0 100%) left / 0 no-repeat;
+      background: linear-gradient(var(--color-eureka) 0 100%) left / 0 no-repeat;
       color: transparent;
       background-clip: text;
       -webkit-background-clip: text;
@@ -63,7 +63,7 @@ a {
         position: absolute;
         content: attr(data-text);
         z-index: -1;
-        color: #7f8c8d; /* Replace with grey color */
+        color: #7f8c8d;
       }
     }
 
