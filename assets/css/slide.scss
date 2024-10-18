@@ -71,6 +71,7 @@ a {
     }
 
     &:hover {
+      color: var(--color-eureka);
       &::before {
         left: calc(100% + 1rem);
       }
