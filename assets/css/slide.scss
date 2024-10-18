@@ -47,7 +47,7 @@ a {
       left: -1rem;
       width: 0.25rem;
       height: 100%;
-      background: var(--color-secondary-text);
+      background: var(--color-eureka);
       transition: 0.6s;
     }
 
@@ -61,9 +61,12 @@ a {
 
       &::before {
         position: absolute;
+        color: transparent;
         content: attr(data-text);
         z-index: -1;
-        color: var(--color-secondary-text);
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-color: var(--color-secondary-text);
       }
     }
 
@@ -96,7 +99,7 @@ a {
   transition: transform 0.3s ease-in-out;
 }
 
-#slidebar .menu-hover-fill {
+#slidebar #menu-hover-fill {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
