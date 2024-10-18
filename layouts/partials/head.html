@@ -60,9 +60,9 @@
 
 {{- $eurekaJS := resources.Get "js/eureka.js" | resources.ExecuteAsTemplate "js/eureka.js" . | minify | fingerprint "sha384" }}
 <script defer src="{{ $eurekaJS.Permalink }}"></script>
-{{ $sass := resources.Get "css/slide.scss" }}
-{{ $style := $sass | resources.ToCSS | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
+
+{{ - $slideSCSS := resources.Get "css/slide.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js" "inlineImports" true) | resources.ExecuteAsTemplate "css/slide.scss" . | minify | fingerprint "sha384" }}
+<link rel="stylesheet" href="{{ $slideSCSS.Permalink }}">
 
 {{ $googleFonts := "" }}
 {{ range $index, $value := partial "utils/get-style-fonts" (dict "context" . "param" "googleFonts") }}
