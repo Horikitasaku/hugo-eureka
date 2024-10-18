@@ -35,9 +35,8 @@ a {
   text-decoration: none;
 }
 
-.menu-hover-fill {
+#menu-hover-fill {
   li {
-    list-style-type: none;
     position: relative;
 
     &::before {
