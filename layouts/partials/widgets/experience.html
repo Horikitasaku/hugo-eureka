@@ -4,7 +4,6 @@
       <div
         class="bg-secondary-bg prose dark:border-tertiary-bg rounded border p-6 transition duration-200 ease-in-out hover:shadow-lg"
       >
-        <!-- <h3 class="">{{ .title }}</h3> -->
         <h3 class="">
           {{ if .titleUrl }}
             <a href="{{ .titleUrl }}" style="text-decoration: none; font-weight: bold;">
@@ -27,7 +26,6 @@
             {{ if and .organization.name .location }}
               <span class="ms-2 me-2">·</span>
             {{ end }}
-
 
             <span>{{ .location | markdownify }} </span>
           </div>
