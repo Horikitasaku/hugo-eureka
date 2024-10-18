@@ -14,13 +14,6 @@
     --success-color: {{ partial "utils/get-style-color" (dict "context" . "color" "success") }};
     --warning-color: {{ partial "utils/get-style-color" (dict "context" . "color" "warning") }};
     --danger-color: {{ partial "utils/get-style-color" (dict "context" . "color" "danger") }};
-    --menu-link-active-colors: 
-      {{ partial "utils/get-style-color" (dict "context" . "color" "primary") }},
-      {{ partial "utils/get-style-color" (dict "context" . "color" "info") }},
-      {{ partial "utils/get-style-color" (dict "context" . "color" "success") }},
-      {{ partial "utils/get-style-color" (dict "context" . "color" "warning") }},
-      {{ partial "utils/get-style-color" (dict "context" . "color" "danger") }};
-
   }
   .dark {
     --color-eureka: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "theme")) }};
@@ -36,12 +29,6 @@
     --success-color: {{ partial "utils/get-style-color" (dict "context" . "color" "success") }};
     --warning-color: {{ partial "utils/get-style-color" (dict "context" . "color" "warning") }};
     --danger-color: {{ partial "utils/get-style-color" (dict "context" . "color" "danger") }};
-    --menu-link-active-colors: 
-      {{ partial "utils/get-style-color" (dict "context" . "color" "primary") }},
-      {{ partial "utils/get-style-color" (dict "context" . "color" "info") }},
-      {{ partial "utils/get-style-color" (dict "context" . "color" "success") }},
-      {{ partial "utils/get-style-color" (dict "context" . "color" "warning") }},
-      {{ partial "utils/get-style-color" (dict "context" . "color" "danger") }};
   }
 
   h1,
