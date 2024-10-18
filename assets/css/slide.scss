@@ -20,8 +20,6 @@
 .pagination .active,
 .pagination .page-item:not(.disabled):hover,
 .selected-menu-item {
-  color: var(--color-primary-text);
-  border-top-color: var(--color-primary-text);
   border-bottom-color: transparent;
 }
 
@@ -35,7 +33,7 @@ a {
   text-decoration: none;
 }
 
-.menu-hover-fill {
+#menu-hover-fill {
   li {
     list-style-type: none;
     position: relative;
@@ -47,7 +45,7 @@ a {
       left: -1rem;
       width: 0.25rem;
       height: 100%;
-      background: #38b2ac;
+      background: var(--color-secondary-bg);
       transition: 0.6s;
     }
 
@@ -62,7 +60,7 @@ a {
         position: absolute;
         content: attr(data-text);
         z-index: -1;
-        color: #7f8c8d; /* Replace with grey color */
+        color: var(--color-secondary-text);
       }
     }
 
