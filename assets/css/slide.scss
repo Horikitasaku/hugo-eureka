@@ -63,7 +63,7 @@ a {
         position: absolute;
         content: attr(data-text);
         z-index: -1;
-        color: #7f8c8d;
+        color: var(--color-secondary-text);
       }
     }
 
