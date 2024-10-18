@@ -7,5 +7,6 @@
 @import "prose.css";
 @import "site.css";
 @import "slide.scss";
+@import "style.css";
 /* Tailwind's utility classes - generated based on config file */
 @tailwind utilities;
