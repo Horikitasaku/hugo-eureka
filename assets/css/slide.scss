@@ -1,23 +1,23 @@
 .sticky-toc {
   position: sticky;
-  top: 8rem; /* top-32 */
+  top: 8rem;
   z-index: 0;
   transition: all 0.3s ease-in-out;
 }
 
 .sticky-toc a {
-  color: var(--secondary-text);
+  color: #95a5a6; /* Use secondary text color directly */
   transition: color 0.2s ease-in-out;
 }
 
 .sticky-toc a:hover {
-  color: var(--color-eureka);
+  color: #38b2ac; /* Replace with eureka color */
 }
 
 .sticky-toc ul,
 .sticky-toc ol {
-  padding-left: 2rem; /* ps-8 */
-  color: var(--tertiary-text);
+  padding-left: 2rem;
+  color: #7f8c8d; /* Use tertiary text color directly */
   font-size: 1rem;
   list-style-position: outside;
 }
@@ -31,11 +31,11 @@
 }
 
 .sticky-toc li + li {
-  margin-top: 0.25rem; /* mt-1 */
+  margin-top: 0.25rem;
 }
 
 .sticky-toc li > p + p {
-  margin-top: 1.5rem; /* mt-6 */
+  margin-top: 1.5rem;
 }
 
 .object-contain {
@@ -53,20 +53,27 @@
 }
 
 .pagination .page-item .page-link {
-  margin: 0.5rem; /* m-2 */
-  padding: 0.5rem; /* p-2 */
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
 .pagination .active,
 .pagination .page-item:not(.disabled):hover,
 .selected-menu-item {
-  color: var(--color-eureka);
-  border-top-color: var(--color-eureka);
+  color: #38b2ac; /* Replace with eureka color */
+  border-top-color: #38b2ac;
   border-bottom-color: transparent;
 }
 
-$menu-link-active-colors: var(--primary-color), var(--info-color),
-  var(--success-color), var(--warning-color), var(--danger-color);
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
 
 .menu-hover-fill {
   li {
@@ -79,14 +86,13 @@ $menu-link-active-colors: var(--primary-color), var(--info-color),
       left: -1rem;
       width: 0.25rem;
       height: 100%;
-      background: var(--menu-link-active-color);
+      background: #38b2ac;
       transition: 0.6s;
     }
 
     a {
-      --menu-link-color: var(--grey-color);
       position: relative;
-      background: linear-gradient(var(--menu-link-active-color) 0 100%) left / 0 no-repeat;
+      background: linear-gradient(#38b2ac 0 100%) left / 0 no-repeat;
       color: transparent;
       background-clip: text;
       -webkit-background-clip: text;
@@ -96,14 +102,28 @@ $menu-link-active-colors: var(--primary-color), var(--info-color),
         position: absolute;
         content: attr(data-text);
         z-index: -1;
-        color: var(--menu-link-color);
+        color: #7f8c8d; /* Replace with grey color */
       }
     }
 
-    @for $i from 1 through length($menu-link-active-colors) {
-      &:nth-child(#{$i}) {
-        --menu-link-active-color: #{nth($menu-link-active-colors, $i)};
-      }
+    &:nth-child(1) {
+      --menu-link-active-color: #38b2ac;
+    }
+
+    &:nth-child(2) {
+      --menu-link-active-color: #1abc9c;
+    }
+
+    &:nth-child(3) {
+      --menu-link-active-color: #2ecc71;
+    }
+
+    &:nth-child(4) {
+      --menu-link-active-color: #f1c40f;
+    }
+
+    &:nth-child(5) {
+      --menu-link-active-color: #e74c3c;
     }
 
     &:hover {
@@ -118,41 +138,8 @@ $menu-link-active-colors: var(--primary-color), var(--info-color),
   }
 }
 
-.slidebar {
-  position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 40;
-  transition: transform 0.3s ease-in-out;
-}
-
-.slidebar-toggle {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translate(-100%, -50%);
-  background-color: var(--secondary-bg);
-  padding: 0.5rem;
-  border-radius: 0 0.375rem 0.375rem 0;
-  transition: background-color 0.3s ease;
-}
-
-#slidebar-toggle:hover {
-  background-color: var(--primary-color);
-}
-
-.bg-secondary-bg {
-  background-color: #f8f9fa; 
-}
-
-.menu-hover-fill a:hover {
-  color: var(--primary-color); 
-}
-
-
-.experience-section,
-.pages-section {
+#experience-section,
+#pages-section {
   padding-top: 100px;
   margin-top: -100px;
 }

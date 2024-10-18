@@ -8,13 +8,8 @@
   --color-secondary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "light" "secondaryText")) }};
   --color-tertiary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "light" "tertiaryText")) }};
   --fonts-eureka: {{ $fonts := partial "utils/get-style-fonts" (dict "context" . "param" "name") }}{{ range $index, $value := $fonts }}{{ if gt $index 0 }},{{ end }}{{ $value }}{{ else }}""{{ end }};
-  --grey-color: {{ partial "utils/get-style-color" (dict "context" . "color" "grey") }};
-  --primary-color: {{ partial "utils/get-style-color" (dict "context" . "color" "primary") }};
-  --info-color: {{ partial "utils/get-style-color" (dict "context" . "color" "info") }};
-  --success-color: {{ partial "utils/get-style-color" (dict "context" . "color" "success") }};
-  --warning-color: {{ partial "utils/get-style-color" (dict "context" . "color" "warning") }};
-  --danger-color: {{ partial "utils/get-style-color" (dict "context" . "color" "danger") }};
 }
+
 .dark {
   --color-eureka: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "theme")) }};
   --color-primary-bg: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "primaryBackground")) }};
@@ -23,12 +18,6 @@
   --color-primary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "primaryText")) }};
   --color-secondary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "secondaryText")) }};
   --color-tertiary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "tertiaryText")) }};
-  --grey-color: {{ partial "utils/get-style-color" (dict "context" . "color" "grey") }};
-  --primary-color: {{ partial "utils/get-style-color" (dict "context" . "color" "primary") }};
-  --info-color: {{ partial "utils/get-style-color" (dict "context" . "color" "info") }};
-  --success-color: {{ partial "utils/get-style-color" (dict "context" . "color" "success") }};
-  --warning-color: {{ partial "utils/get-style-color" (dict "context" . "color" "warning") }};
-  --danger-color: {{ partial "utils/get-style-color" (dict "context" . "color" "danger") }};
 }
 
 h1,
