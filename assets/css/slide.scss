@@ -38,11 +38,11 @@ a {
 #menu-hover-fill {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%; 
   align-items: flex-start;
   line-height: 1.5;
+  gap: 20px; 
 }
+
 
 #menu-hover-fill li {
   position: relative;
@@ -91,9 +91,9 @@ a {
 #slidebar {
   position: fixed;
   right: 256px;
-  top: 25%; /* Adjust as needed */
-  width: 16rem; /* Responsive width */
-  transform: translateX(0); /* Make it visible initially */
+  top: 25%;
+  width: 16rem; 
+  transform: translateX(0);
   z-index: 40;
   transition: transform 0.3s ease-in-out;
 }
