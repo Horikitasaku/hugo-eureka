@@ -61,7 +61,7 @@ a {
 
       &::before {
         position: absolute;
-        color: transparent;
+        color: var(--color-secondary-text);
         content: attr(data-text);
         z-index: -1;
         background-clip: text;
