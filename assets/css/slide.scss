@@ -35,53 +35,49 @@ a {
   text-decoration: none;
 }
 
-#menu-hover-fill {
-  li {
+#menu-hover-fill li {
+  position: relative;
+  list-style-type: none;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -1rem;
+    width: 0.25rem;
+    height: 100%;
+    background: var(--color-eureka);
+    transition: left 0.6s ease; /* Apply a smooth transition */
+  }
+
+  a {
     position: relative;
-    list-style-type: none;
+    background: linear-gradient(var(--color-eureka) 0 100%) left / 0 no-repeat;
+    color: transparent;
+    background-color: var(--color-secondary-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: background-size 0.45s 0.04s ease; /* Ensure valid transition */
 
     &::before {
       position: absolute;
-      content: "";
-      top: 0;
-      left: -1rem;
-      width: 0.25rem;
-      height: 100%;
-      background: var(--color-eureka);
-      transition: 0.6s;
+      content: attr(data-text);
+      z-index: -1;
+      color: var(--color-secondary-text);
+    }
+  }
+
+  &:hover {
+    &::before {
+      left: calc(100% + 1rem); /* Ensure the movement is visible */
     }
 
     a {
-      position: relative;
-      background: linear-gradient(var(--color-eureka) 0 100%) left / 0 no-repeat;
-      color: transparent;
-      background-color: var(--color-secondary-text);
-      background-clip: text;
-      -webkit-background-clip: text;
-      transition: background-size 0.45s 0.04s;
-
-      &::before {
-        position: absolute;
-        color: var(--color-secondary-text);
-        content: attr(data-text);
-        z-index: -1;
-        background-clip: text;
-        -webkit-background-clip: text;
-        background-color: var(--color-secondary-text);
-      }
-    }
-
-    &:hover {
-      &::before {
-        left: calc(100% + 1rem);
-      }
-
-      a {
-        background-size: 100%;
-      }
+      background-size: 100%; /* Expand gradient on hover */
     }
   }
 }
+
 
 
 #experience-section,
