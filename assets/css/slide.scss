@@ -78,6 +78,11 @@ a {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  #slidebar {
+    display: none;
+  }
+}
 
 #slidebar {
   position: fixed;
