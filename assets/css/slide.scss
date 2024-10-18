@@ -20,6 +20,8 @@
 .pagination .active,
 .pagination .page-item:not(.disabled):hover,
 .selected-menu-item {
+  color: var(--color-primary-text);
+  border-top-color: var(--color-primary-text);
   border-bottom-color: transparent;
 }
 
@@ -33,7 +35,7 @@ a {
   text-decoration: none;
 }
 
-#menu-hover-fill {
+.menu-hover-fill {
   li {
     list-style-type: none;
     position: relative;
@@ -60,7 +62,7 @@ a {
         position: absolute;
         content: attr(data-text);
         z-index: -1;
-        color: var(--color-secondary-text);
+        color: #7f8c8d; /* Replace with grey color */
       }
     }
 
