@@ -38,6 +38,7 @@ a {
 #menu-hover-fill {
   li {
     position: relative;
+    list-style-type: none;
 
     &::before {
       position: absolute;
