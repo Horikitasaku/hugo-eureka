@@ -1,8 +1,10 @@
 {{- define "main" }}
+  {{ if or (eq .RelPermalink "/en/") (eq .RelPermalink "/jp/") (eq .RelPermalink "/zh/") }}
+    {{- partial "slidebar" . -}}
+  {{ end }}
   {{ $homepage := .Site.GetPage "homepage" }}
   {{ $widgets := $homepage.Resources }}
   <meta name="robots" content="index, follow">
-  {{- partial "slidebar" . -}}
 
   {{ range $widgets }}
     {{ if .Params.widget.handler }}
