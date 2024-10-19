@@ -4,7 +4,7 @@
       <div
         class="bg-secondary-bg prose dark:border-tertiary-bg rounded border p-6 transition duration-200 ease-in-out hover:shadow-lg"
       >
-        <h3 class="flex flex-col md:flex-row mb-2"> <!-- Reduced margin-bottom -->
+        <h3 class="flex flex-col md:flex-row mb-3">
           {{ if .publicationUrl }}
             <a href="{{ .publicationUrl }}" style="text-decoration: none; font-weight: bold;">
               {{ .title | markdownify }}
@@ -13,14 +13,15 @@
             {{ .title | markdownify }}
           {{ end }}
         </h3>
-        <div class="flex flex-col md:flex-row md:justify-between mb-1"> <!-- Reduced margin-bottom -->
+        <div class="flex flex-col md:flex-row mt-1">{{ .authors | markdownify }}</div>
+        <div class="flex flex-col md:flex-row md:justify-between mt-1"> <!-- Journal below authors -->
           <div class="flex flex-col md:flex-row mb-1">
             {{ if .journal.url }}
               <a href="{{ .journal.url }}" class="no-underline">
-                {{ .journal.name | markdownify }}
+                <em>{{ .journal.name | markdownify }}</em> <!-- Italicized journal name -->
               </a>
             {{ else }}
-              <span>{{ .journal.name | markdownify }}</span>
+              <span><em>{{ .journal.name | markdownify }}</em></span> <!-- Italicized journal name -->
             {{ end }}
 
             {{ if and .journal.name .year }}
@@ -30,7 +31,6 @@
             <span>{{ .year | markdownify }} </span>
           </div>
         </div>
-        <div class="flex flex-col md:flex-row mt-1">{{ .authors | markdownify }}</div>
       </div>
     </div>
   {{ end }}
