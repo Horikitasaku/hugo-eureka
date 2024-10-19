@@ -22,19 +22,14 @@
               {{ else }}
                 <span>{{ .journal.name | markdownify }}</span>
               {{ end }}
-  
               {{ if and .journal.name .year }}
-                <span class="ms-2 me-2">·</span>
+                <span class="ms-1 me-1">·</span>
               {{ end }}
-  
               <span>{{ .year | markdownify }} </span>
             </div>
-            <div class="shrink-0">{{ .dates | markdownify }}</div>
+            <div class="shrink-0">{{ .authors | markdownify }}</div>
           </div>
-  
-          <div class="mt-5">{{ .abstract | markdownify }}</div>
         </div>
       </div>
     {{ end }}
-  </div>
-  
+  </div>  
