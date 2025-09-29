@@ -1,8 +1,14 @@
 <meta property="og:title" content="{{ partial "get-title" . }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-{{ $icon := partial "utils/get-image" (dict "context" . "url" .Site.Params.icon) }}
-{{ with $icon }}
+{{/* Prefer per-page featuredImage, fallback to site icon */}}
+{{ $pageImage := partial "utils/get-image" (dict "context" . "url" .Params.featuredImage) }}
+{{ if $pageImage }}
+<meta property="og:image" content="{{ $pageImage }}">
+{{ else }}
+  {{ $icon := partial "utils/get-image" (dict "context" . "url" .Site.Params.icon) }}
+  {{ with $icon }}
 <meta property="og:image" content="{{ . }}">
+  {{ end }}
 {{ end }}
 
 <meta property="og:url" content="{{ .Permalink }}" />
