@@ -1,7 +1,20 @@
 <meta property="og:title" content="{{ partial "get-title" . }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-{{/* Prefer per-page featuredImage, fallback to site icon */}}
-{{ $pageImage := partial "utils/get-image" (dict "context" . "url" .Params.featuredImage) }}
+{{/* Prefer per-page coverImage (or cover.image), then featuredImage; fallback to site icon */}}
+{{ $pageImage := "" }}
+{{ with .Params.coverImage }}
+  {{ $pageImage = partial "utils/get-image" (dict "context" $ "url" .) }}
+{{ end }}
+{{ if not $pageImage }}
+  {{ with .Params.cover }}
+    {{ with .image }}
+      {{ $pageImage = partial "utils/get-image" (dict "context" $ "url" .) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if not $pageImage }}
+  {{ $pageImage = partial "utils/get-image" (dict "context" . "url" .Params.featuredImage) }}
+{{ end }}
 {{ if $pageImage }}
 <meta property="og:image" content="{{ $pageImage }}">
 <meta name="twitter:image" content="{{ $pageImage }}">
