@@ -4,14 +4,32 @@
 {{ $pageImage := partial "utils/get-image" (dict "context" . "url" .Params.featuredImage) }}
 {{ if $pageImage }}
 <meta property="og:image" content="{{ $pageImage }}">
+<meta name="twitter:image" content="{{ $pageImage }}">
 {{ else }}
   {{ $icon := partial "utils/get-image" (dict "context" . "url" .Site.Params.icon) }}
   {{ with $icon }}
 <meta property="og:image" content="{{ . }}">
+<meta name="twitter:image" content="{{ . }}">
   {{ end }}
 {{ end }}
 
 <meta property="og:url" content="{{ .Permalink }}" />
+
+{{/* Twitter Card tags */}}
+<meta name="twitter:card" content="summary_large_image" />
+{{ with .Site.Params.twitter.site }}<meta name="twitter:site" content="{{ . }}" />{{ end }}
+<meta name="twitter:title" content="{{ partial "get-title" . }}" />
+{{ with .Description }}
+<meta name="twitter:description" content="{{ . }}" />
+{{ else }}
+{{ if .IsPage }}
+<meta name="twitter:description" content="{{ .Summary }}" />
+{{ else }}
+{{ with .Site.Params.Description }}
+<meta name="twitter:description" content="{{ . }}" />
+{{ end }}
+{{ end }}
+{{ end }}
 
 {{ with .Params.audio }}
 <meta property="og:audio" content="{{ . | absURL }}" />
